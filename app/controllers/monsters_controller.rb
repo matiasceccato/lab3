@@ -6,4 +6,9 @@ class MonstersController < ApplicationController
   def show
     @monster = Monster.find(params[:id])
   end
+
+  def destroy
+    Monster.find(params[:id]).destroy
+    redirect_to monsters_path
+  end
 end
